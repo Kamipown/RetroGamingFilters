@@ -1,0 +1,66 @@
+#inputFilter {
+  cursor: pointer;
+  > div {
+    > span {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid #ddd;
+      border-bottom: 2px solid #ddd;
+      transform: rotate(45deg);
+    }
+    > .options {
+      position: absolute;
+      z-index: 1;
+      top: calc(100% + 10px);
+      left: -2px;
+      right: -2px;
+      border: 2px solid #fff;
+      > div {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        background-color: #222;
+        > p {
+
+        }
+        > span {
+          position: absolute;
+          top: 14px;
+          right: 14px;
+          width: 6px;
+          height: 8px;
+          border-right: 2px solid #222;
+          border-bottom: 2px solid #222;
+          transform: rotate(45deg);
+        }
+        &:not(:first-child) {
+          border-top: 2px solid #fff;
+        }
+        &:hover {
+          background-color: #fff;
+          color: #222;
+        }
+      }
+    }
+  }
+  &:hover, &:active {
+    > div > span {
+      border-color: #fff;
+    }
+  }
+  &:not(.active) {
+    > div > .options {
+      display: none;
+    }
+  }
+  &.active {
+    > div > .options {
+      display: block;
+    }
+  }
+}

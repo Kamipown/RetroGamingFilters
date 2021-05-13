@@ -1,0 +1,44 @@
+.input {
+  margin-top: 16px;
+  > div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 40px;
+    border: 2px solid #ddd;
+    user-select: none;
+    > label {
+      position: absolute;
+      top: -7px;
+      left: 16px;
+      line-height: 14px;
+      padding: 0 8px;
+      font-weight: 600;
+      font-size: 14px;
+      background-color: #222;
+    }
+    > p {
+      line-height: 24px;
+      font-size: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  > p {
+    height: 12px;
+    line-height: 12px;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+  &:hover, &:active {
+    > div {
+      border-color: #fff;
+      > label {
+        color: #fff;
+      }
+    }
+  }
+}

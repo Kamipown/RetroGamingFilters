@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		<meta name="Identifier-url" content="https://kamipown.github.io">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css" href="./app.css">
+		<link rel="icon" type="image/png" href="./favicon.png"/>
+		<title>RETRO GAMING FILTERS</title>
+	</head>
+
+	<body style="background-color: #222;">
+    <h1>RETRO GAMING FILTERS</h1>
+    <form>
+      <div class="input" id="inputFile">
+        <div>
+          <label>Image</label>
+          <p class="value">Select a file ...</p>
+          <input type="file" accept=".png, .jpg, .jpeg"/>
+        </div>
+        <p class="legend"></p>
+      </div>
+      <div class="input" id="inputFilter">
+        <div>
+          <label>Filter</label>
+          <p class="value">Game Boy</p>
+          <span></span>
+          <ul class="options"></ul>
+        </div>
+        <p class="legend">4 colors</p>
+      </div>
+      <div class="input" id="inputPixelate">
+        <div>
+          <label>Pixelate</label>
+          <p class="value">8</p>
+          <span class="decrement">-</span>
+          <span class="increment">+</span>
+        </div>
+        <p class="legend"></p>
+      </div>
+      <div class="input" id="inputUpscale">
+        <div>
+          <label>Upscale</label>
+          <p class="value">4</p>
+          <span class="decrement">-</span>
+          <span class="increment">+</span>
+        </div>
+        <p class="legend"></p>
+      </div>
+    </form>
+    <main id="result">
+      <p>Result</p>
+      <div>
+        <canvas width="0" height="0"></canvas>
+        <p class="error"></p>
+        <div class="loading"><span></span></div>
+      </div>
+    </main>
+    <script type="module" src="./filter.worker.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
+	</body>
+</html>

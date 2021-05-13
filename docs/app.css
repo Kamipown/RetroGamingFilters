@@ -1,0 +1,215 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans"; }
+
+html, body {
+  height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 32px 32px 32px 0;
+  text-align: center;
+  color: #ddd; }
+  body > h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff; }
+  body > form {
+    padding-top: 16px; }
+  body > main {
+    position: relative;
+    max-width: 100%;
+    margin-top: 32px;
+    padding-bottom: 32px; }
+    body > main > p {
+      position: absolute;
+      top: -7px;
+      left: calc(50% - 120px + 16px);
+      line-height: 14px;
+      padding: 0 8px;
+      font-weight: 600;
+      font-size: 14px;
+      background-color: #222; }
+    body > main > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 240px;
+      min-height: 180px;
+      padding: 16px;
+      border: 2px solid #ddd;
+      overflow: auto; }
+      body > main > div > canvas {
+        max-width: 100%; }
+      body > main > div > .error {
+        display: none;
+        color: #e55; }
+      body > main > div > .loading {
+        position: absolute;
+        top: -6px;
+        left: 0px;
+        display: none;
+        width: 4px;
+        height: 2px;
+        background-color: #fff;
+        color: #e55;
+        -webkit-animation: move 500ms ease-in-out infinite alternate;
+                animation: move 500ms ease-in-out infinite alternate; }
+
+@-webkit-keyframes move {
+  0% {
+    transform: translateX(0);
+    width: 4px; }
+  50% {
+    width: 8px; }
+  100% {
+    transform: translateX(12px);
+    width: 4px; } }
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+    width: 4px; }
+  50% {
+    width: 8px; }
+  100% {
+    transform: translateX(12px);
+    width: 4px; } }
+    body > main.error > div > .error {
+      display: block; }
+    body > main.loading > div > .loading {
+      display: block; }
+
+.input {
+  margin-top: 16px; }
+  .input > div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 40px;
+    border: 2px solid #ddd;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    .input > div > label {
+      position: absolute;
+      top: -7px;
+      left: 16px;
+      line-height: 14px;
+      padding: 0 8px;
+      font-weight: 600;
+      font-size: 14px;
+      background-color: #222; }
+    .input > div > p {
+      line-height: 24px;
+      font-size: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+  .input > p {
+    height: 12px;
+    line-height: 12px;
+    margin-top: 8px;
+    font-size: 12px; }
+  .input:hover > div, .input:active > div {
+    border-color: #fff; }
+    .input:hover > div > label, .input:active > div > label {
+      color: #fff; }
+
+#inputFile > div > input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer; }
+
+#inputFilter {
+  cursor: pointer; }
+  #inputFilter > div > span {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    transform: rotate(45deg); }
+  #inputFilter > div > .options {
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 10px);
+    left: -2px;
+    right: -2px;
+    border: 2px solid #fff; }
+    #inputFilter > div > .options > div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      background-color: #222; }
+      #inputFilter > div > .options > div > span {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 6px;
+        height: 8px;
+        border-right: 2px solid #222;
+        border-bottom: 2px solid #222;
+        transform: rotate(45deg); }
+      #inputFilter > div > .options > div:not(:first-child) {
+        border-top: 2px solid #fff; }
+      #inputFilter > div > .options > div:hover {
+        background-color: #fff;
+        color: #222; }
+  #inputFilter:hover > div > span, #inputFilter:active > div > span {
+    border-color: #fff; }
+  #inputFilter:not(.active) > div > .options {
+    display: none; }
+  #inputFilter.active > div > .options {
+    display: block; }
+
+#inputPixelate > div > span {
+  position: absolute;
+  display: block;
+  line-height: 36px;
+  width: 36px;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer; }
+  #inputPixelate > div > span:first-of-type {
+    left: 0; }
+  #inputPixelate > div > span:last-of-type {
+    right: 0; }
+  #inputPixelate > div > span:hover, #inputPixelate > div > span:active {
+    color: #fff; }
+
+#inputUpscale > div > span {
+  position: absolute;
+  display: block;
+  line-height: 36px;
+  width: 36px;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer; }
+  #inputUpscale > div > span:first-of-type {
+    left: 0; }
+  #inputUpscale > div > span:last-of-type {
+    right: 0; }
+  #inputUpscale > div > span:hover, #inputUpscale > div > span:active {
+    color: #fff; }
+

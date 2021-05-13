@@ -1,0 +1,20 @@
+#inputUpscale {
+  > div > span {
+    position: absolute;
+    display: block;
+    line-height: 36px;
+    width: 36px;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    &:first-of-type {
+      left: 0;
+    }
+    &:last-of-type {
+      right: 0;
+    }
+    &:hover, &:active {
+      color: #fff;
+    }
+  }
+}
