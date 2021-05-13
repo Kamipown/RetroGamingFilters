@@ -137,6 +137,9 @@ body {
   opacity: 0;
   cursor: pointer; }
 
+#inputFile > div > p {
+  padding: 0 8px; }
+
 #inputFilter {
   cursor: pointer; }
   #inputFilter > div > span {
